@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
         ]);
 
         return response()->json([
-            "token" => $user->createToken('hase_token')->plainTextToken,
+            "token" => $user->createToken('base_token')->plainTextToken,
         ]);
     }
 
