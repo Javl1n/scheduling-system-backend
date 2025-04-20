@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\Auth\RegisteredUserController;
 use App\Http\Controllers\Api\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +23,23 @@ Route::middleware(['auth:sanctum'])
 
     Route::controller(SubjectController::class)
     ->prefix("/subject")
-    ->name("subjects.")
+    ->name("subject.")
+    ->group(function () {
+        Route::get("/", "index")->name("index");
+        Route::post("store", "store")->name("store");
+    });
+
+    Route::controller(InstructorController::class)
+    ->prefix("/instructor")
+    ->name("instructor.")
+    ->group(function () {
+        Route::get("/", "index")->name("index");
+        Route::post("store", "store")->name("store");
+    });
+
+    Route::controller(RoomController::class)
+    ->prefix("/room")
+    ->name("room.")
     ->group(function () {
         Route::get("/", "index")->name("index");
         Route::post("store", "store")->name("store");

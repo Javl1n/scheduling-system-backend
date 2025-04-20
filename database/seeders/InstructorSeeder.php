@@ -13,8 +13,8 @@ class InstructorSeeder extends Seeder
      */
     public function run(): void
     {
-        Instructor::factory()->create([
-            "school_id" => "2022-00360",
-        ]);
+        // Instructor::factory()->create([
+        //     "school_id" => "2022-00360",
+        // ]);
     }
 }

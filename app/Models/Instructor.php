@@ -12,11 +12,13 @@ class Instructor extends Model
     /** @use HasFactory<\Database\Factories\InstructorFactory> */
     use HasFactory;
 
+    protected $fillable = ["school_id", "name"];
+
     public function subjects(): BelongsToMany {
         return $this->belongsToMany(Subject::class)->using(InstructorSubject::class);
     }
 
-    public function preferred_days() {
+    public function days() {
         return $this->hasMany(PreferredDay::class);
     }
 

@@ -22,7 +22,7 @@ class SubjectSeeder extends Seeder
         //     ],
         // ]);
 
-        foreach (Subject::factory(10)->create() as $subject) {
+        foreach (Subject::factory(2)->create() as $subject) {
             $subject->years()->createMany([
                 [
                     "year" => "First"
@@ -30,7 +30,7 @@ class SubjectSeeder extends Seeder
             ]);
         }
 
-        foreach (Subject::factory(5)->create() as $subject) {
+        foreach (Subject::factory(3)->create() as $subject) {
             $subject->years()->createMany([
                 [
                     "year" => "Second"
@@ -38,7 +38,7 @@ class SubjectSeeder extends Seeder
             ]);
         }
 
-        foreach (Subject::factory(14)->create() as $subject) {
+        foreach (Subject::factory(1)->create() as $subject) {
             $subject->years()->createMany([
                 [
                     "year" => "Third"
@@ -49,7 +49,7 @@ class SubjectSeeder extends Seeder
             ]);
         }
 
-        foreach (Subject::factory(7)->create() as $subject) {
+        foreach (Subject::factory(4)->create() as $subject) {
             $subject->years()->createMany([
                 [
                     "year" => "Fourth"

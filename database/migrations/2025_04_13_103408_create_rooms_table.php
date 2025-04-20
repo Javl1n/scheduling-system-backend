@@ -14,16 +14,27 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->boolean("available");
-            $table->integer("number");
+
+            $table->string("code");
+            $table->string("description");
+
+            $table->string("span");
+
+            $table->enum("placement", ["right", "center", "left"]);
             $table->enum("floor", [1, 2, 3, 4]);
-            $table->unique(["floor", "number"]);
+            $table->integer("number");
+            $table->unique(["floor", "number", "placement"]);
+
             $table->enum("type", [
-                "library",
-                "classroom",
-                "comlab",
-                "comfort room",
-                "office"
+                "Library",
+                "Classroom",
+                "Laboratory",
+                "Comfort Room",
+                "Office",
+                "Misc.",
+                "Structure",
             ]);
+
             $table->timestamps();
         });
     }
